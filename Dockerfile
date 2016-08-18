@@ -1,4 +1,4 @@
-FROM rhel7:latest
+FROM registry.access.redhat.com/rhel7:latest
 
 RUN groupadd -r rabbitmq && useradd -r -d /var/lib/rabbitmq -m -g rabbitmq rabbitmq
 
