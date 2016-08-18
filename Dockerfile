@@ -32,6 +32,7 @@ RUN rabbitmq-plugins enable --offline rabbitmq_management rabbitmq_shovel rabbit
 
 EXPOSE 15671 15672 4369 5671 5672 25672
 
-COPY docker-entrypoint.sh /
+COPY docker-entrypoint.sh && chown rabbitmq:rabbitmq docker-entrypoint.sh /
+ 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["rabbitmq-server"]
