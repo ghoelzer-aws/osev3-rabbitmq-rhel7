@@ -7,7 +7,7 @@ ENV RABBIT_VERSION 3.6.4
 RUN rpm -Uvh --replacepkgs https://www.rabbitmq.com/releases/erlang/erlang-18.3-1.el7.centos.x86_64.rpm && \
     rpm --import https://www.rabbitmq.com/rabbitmq-release-signing-key.asc && \
     curl -s "http://www.rabbitmq.com/releases/rabbitmq-server/v$RABBIT_VERSION/rabbitmq-server-$RABBIT_VERSION-1.noarch.rpm" > "/tmp/rabbitmq-server-$RABBIT_VERSION-1.noarch.rpm" && \
-    yum -y install erlang "/tmp/rabbitmq-server-$RABBIT_VERSION-1.noarch.rpm" && \
+    yum -y install "/tmp/rabbitmq-server-$RABBIT_VERSION-1.noarch.rpm" && \
     yum -y clean all && \
     rm "/tmp/rabbitmq-server-$RABBIT_VERSION-1.noarch.rpm"
 
